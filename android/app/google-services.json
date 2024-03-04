@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "644809098990",
+    "project_id": "flutter-interveiw",
+    "storage_bucket": "flutter-interveiw.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644809098990:android:cc4673edade808dadb55ff",
+        "android_client_info": {
+          "package_name": "com.example.flutter_interview"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtQ_LXsaB8fjFJvTnolX1Zfy6nblP4HjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
