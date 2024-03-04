@@ -1,9 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-
 
 
 void main() {
@@ -20,28 +17,6 @@ class MyApp extends StatefulWidget {
 
 
 class _MyAppState extends State<MyApp> {
-  List<dynamic> Tasks = [];
-
-  @override
-  void initState() {
-    super.initState();
-    FetchData();
-  }
-
-
-  Future<void> FetchData() async{
-    Uri uri = Uri.parse("http://192.168.1.6:3000/tasks");
-    final response = await http.get(uri);
-
-    if (response.statusCode == 200) {
-      setState(() {
-        Tasks = jsonDecode(response.body);
-      });
-    } else{
-      throw Exception("Cannot load tasks");
-    }
-
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,19 +63,18 @@ class _MyAppState extends State<MyApp> {
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(50))
                ),
                child: ListView.builder( 
-                itemCount: Tasks.length,
+                itemCount: 1,
                itemBuilder:(context ,index) {
-               
                 return Container(
                   margin: const EdgeInsets.all(5),
                   decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 221, 219, 219),
                     borderRadius: BorderRadius.all(Radius.circular(5))
                   ),
-                  child: ListTile(
-                    title: Text( "task 1", style: const TextStyle(fontWeight: FontWeight.bold , color: Color(0xff322F8F)),),
-                    subtitle: const Text("Lorem Ipsum has been the industrys standard dummy text ever"),
-                    trailing: const Row(
+                  child: const ListTile(
+                    title: Text( "task 1", style: TextStyle(fontWeight: FontWeight.bold , color: Color(0xff322F8F)),),
+                    subtitle: Text("Lorem Ipsum has been the industrys standard dummy text ever"),
+                    trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         IconButton(onPressed: null, icon: Icon(Icons.edit , color: Color(0xff322F8F))),
